@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Машинка</title> 
+    <style> 
+        .road { 
+            position: relative; 
+            width: 100%; 
+            height: 200px; 
+            background-color:aqua; 
+            overflow: hidden; 
+        } 
+ 
+        .car { 
+            position: absolute; 
+            top: 50px; 
+            left: 200px; 
+            width: 200px; 
+            height: 100px; 
+            background-color:black; 
+            border-radius: 10px; 
+            animation: drive 2s linear infinite;
+        } 
+ 
+        .car__wheel { 
+            position: absolute; 
+            background-color:brown; 
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px; 
+            animation: 200ms infinite linear;
+        } 
+ 
+        .car__wheel_front { 
+            top: 60px; 
+            left: 20px; 
+        } 
+ 
+        .car__wheel_back { 
+            top: 60px; 
+            right: 20px; 
+        } 
+        @keyframes rotations{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes drive{
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(300px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    </style> 
+</head> 
+<body> 
+    <div class="road"> 
+        <div class="car"> 
+            <div class="car__wheel car__wheel_front"></div> 
+            <div class="car__wheel car__wheel_back"></div>
+
+        </div> 
+    </div> 
+</body> 
+</html>
